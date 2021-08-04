@@ -11,13 +11,13 @@ require_once "controllers\RegistrationControllerDelivary.php";
 		<fieldset style="width:1000px align: center" >
 	    <legend align="center"><center><h1>Sign Up As Delivery Man</h1></center></legend>
 		<br>
-			<?php
-				if(!empty($_SESSION['message'])){
-					echo $_SESSION['message'];
-					//$_SESSION['message']=""
-				}
+			 <?php
+			 if(!empty($_SESSION['message'])){
+				 echo $_SESSION['message'];
+					 //$_SESSION['message']=""
+				 }
 				
-			?>
+			 ?>
 		<br>
 		<form action="" method="post">
 			<table align="center">

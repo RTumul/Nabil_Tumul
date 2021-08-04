@@ -15,11 +15,9 @@
 			      
 	<form action="" method="post">
 		<div class="text-center">
-			<a href="doc info.php" class="btn btn-danger">Medicine</a>
-			<a href="path.php" class="btn btn-warning">Pathodology</a>			
-			<a href="card.php" class="btn btn-danger">Cardology</a>
-			<a href="anes.php" class="btn btn-warning">Anesthetics</a>
-			<a href="login.php" class="btn btn-primary">Logout</a>		
+			<a href="book_upload.php" class="btn btn-danger">Upload A Book</a>
+			
+			<a href="loginSeller.php" class="btn btn-primary">Logout</a>		
 		</div>
 		</fieldset>
 	

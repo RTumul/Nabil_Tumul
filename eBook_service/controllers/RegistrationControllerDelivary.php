@@ -224,9 +224,9 @@
                 $result = insertUser($name,$uname,$pass,$email,$number,$birthday,$gender);
 				
 				if($result){
-					$_SESSION['message'] = "Successfully Inserted!";
+					$_SESSION['message'] = "Successfully Uploaded!";
 				}else{
-					$_SESSION['message'] = "Failed to insert!";
+					$_SESSION['message'] = "Failed to Upload!";
 				}
                 
             }
