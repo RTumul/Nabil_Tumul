@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2021 at 03:59 PM
+-- Generation Time: Aug 05, 2021 at 05:04 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -31,17 +31,21 @@ CREATE TABLE `books_info` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `wname` varchar(50) NOT NULL,
-  `pri` int(11) NOT NULL,
+  `pri` varchar(10) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone` int(15) NOT NULL
+  `phone` int(15) NOT NULL,
+  `uname` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `books_info`
 --
 
-INSERT INTO `books_info` (`id`, `name`, `wname`, `pri`, `email`, `phone`) VALUES
-(1, 'Jamai Raja', 'Kolkata', 200, 'meh.rubu@yahoo.com', 1725103018);
+INSERT INTO `books_info` (`id`, `name`, `wname`, `pri`, `email`, `phone`, `uname`, `address`) VALUES
+(1, 'Jamai Raja', 'Kolkata', '200', 'meh.rubu@yahoo.com', 1725103018, 'Tumul156', 'abc'),
+(2, 'Abcd', 'Tumul', '120', 'amitumul@gmail.com', 1725103018, 'Tumul156', 'abc'),
+(3, 'Md Ridwanuzzaman', 'Tumul', '120', 'amitumul@gmail.com', 1725103018, 'Tumul156', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12');
 
 -- --------------------------------------------------------
 
@@ -91,8 +95,8 @@ CREATE TABLE `seller_info` (
 --
 
 INSERT INTO `seller_info` (`id`, `name`, `uname`, `pass`, `email`, `phone`, `birthdate`, `gender`, `address`) VALUES
-(1, 'Tumul', 'Tumul156', '', 'meh.rubu@yahoo.com', 1725103018, '1/Jan(1)/1', 'Male', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12'),
-(2, 'Turno', 'Turno123', '', 'meh@yahoo.com', 1725103018, '1/Jan(1)/1', 'Female', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12');
+(1, 'Tumul', 'Tumul156', 'Tumul#156', 'meh.rubu@yahoo.com', 1725103018, '1/Jan(1)/1', 'Male', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12'),
+(2, 'Turno', 'Turno123', 'Turno#123', 'meh@yahoo.com', 1725103018, '1/Jan(1)/1', 'Female', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12');
 
 --
 -- Indexes for dumped tables
@@ -126,7 +130,7 @@ ALTER TABLE `seller_info`
 -- AUTO_INCREMENT for table `books_info`
 --
 ALTER TABLE `books_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `deliveryman_info`

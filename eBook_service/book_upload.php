@@ -21,7 +21,8 @@ require_once "controllers\bookUploadController.php";
 		<br>
 		<form action="" method="post">
 			<table align="center">
-			     <tr>
+			     
+				 <tr>
 					<td><span><b>Book's Name</b>:</span></td>
 					<td><input type="text" name="name" id ="name" value = "<?php echo $name;?>"><br>
 					<td><span id="err_name"><font color="red"> <?php echo $err_name;?> </font></span></td>
@@ -46,6 +47,11 @@ require_once "controllers\bookUploadController.php";
 				    <td><span><b>Phone</b>:</span></td>
 					<td><input type="text" name="number" size="9" id="number" value="<?php echo $number;?>"><br>
 					<td><span id="err_number"><?php echo $err_number;?></span></td>
+				</tr>
+				<tr>
+				    <td><span><b>Pickup Address</b>:</span></td>
+					<td><input type="text" name="address" size="9" id="address" value="<?php echo $address;?>"><br>
+					<td><span id="err_address"><?php echo $err_address;?></span></td>
 				</tr>
 			
 				
