@@ -24,8 +24,8 @@ require_once "controllers\bookUploadController.php";
 			     
 				 <tr>
 					<td><span><b>Book's Name</b>:</span></td>
-					<td><input type="text" name="name" id ="name" value = "<?php echo $name;?>"><br>
-					<td><span id="err_name"><font color="red"> <?php echo $err_name;?> </font></span></td>
+					<td><input type="text" name="bname" id ="bname" value = "<?php echo $bname;?>"><br>
+					<td><span id="err_bname"><font color="red"> <?php echo $err_bname;?> </font></span></td>
 				</tr>
 				<tr>
 					<td><span><b>Writter's Name</b>:</span></td>
@@ -34,7 +34,7 @@ require_once "controllers\bookUploadController.php";
 				</tr>
 				<tr>
 					<td><span><b>Price</b>:</span></td>
-					<td><input type="text" name="pri" id ="pri" value = "<?php echo $pri;?>"><br>
+					<td><input type="number" name="pri" id ="pri" value = "<?php echo $pri;?>"><br>
 					<td><span id="err_pri"><?php echo $err_pri;?></span></td>
 				</tr>
 				

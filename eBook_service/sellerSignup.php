@@ -107,7 +107,7 @@ require_once "controllers\RegistrationControllerSeller.php";
 			<br>
 			<center><input type="submit" name="Register"></center>
 			<br>
-			<h5 style="text-align:center;">Already have an account? <a href="Login.php">Log-In</a></h5><br>
+			<h5 style="text-align:center;">Already have an account? <a href="loginSeller.php">Log-In</a></h5><br>
 			<h5 style="text-align:center;"><a href="signup.php">Back</a></h5><br>
 
 			<center><a href="Home_From.php">Go To HOME</a></center>
