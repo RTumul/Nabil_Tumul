@@ -30,21 +30,18 @@
 	   if(!$hasError){
 			//$_SESSION["user"]=authenticateManager($uname,$pass);
 			if($user = authenticateManager($uname,$pass)){
-				$_SESSION["seller_info"]=$user["Username"];
+				$_SESSION["id"]=$user["id"];
+				$_SESSION["uname"]=$user["uname"];
 				header("Location:home_Seller.php");
 			}
 			echo "Invalid username or password";
 		}
 	}
 	
-	function addsignup($id,$username,$password,$email,$num,$add,$gender,$birth){
-		$query = "insert into seller_info values('$id','$uname','$pass','$email','$num','$add','$gender','$birth')";		
-		execute($query);
-		header("Location:2medical.php");
-	}
+	
 	
 	function authenticateManager($uname,$pass){
-		$query = "select * from seller_info where Username='$uname' and Password='$pass'";
+		$query = "select * from seller_info where uname='$uname' and pass='$pass'";
 		$result = get($query);
 		
 		if(count($result) > 0){

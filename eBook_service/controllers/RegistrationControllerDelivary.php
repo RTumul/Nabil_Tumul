@@ -249,6 +249,15 @@
 		
 		
 	}
+	function checkUsernameValidity($username){
+		$query = "select * from deliveryman_info where uname='$username'";
+		$result = get($query);
+		
+		if(count($result) > 0){
+			return "false";
+		}
+		return "true";
+		}
 	
 	
 

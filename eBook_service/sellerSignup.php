@@ -1,135 +1,123 @@
-<?php
-	require_once "controllers/RegistrationControllerSeller.php";
-?>	
-	
+<?php 
+require_once "controllers\RegistrationControllerSeller.php";
+
+?>
+
+
 <html>
-    <head>
-	    <link rel="stylesheet" type="text/css" href="styles/mystyle.css">
-			<style>
-				.btn-mine{
-					background-color:green;
-					color:white;
-					border:none;
-					width:40%;
-					height:30%;
-				}
-				.btn-mine:hover{
-					background-color:red;
-				}
-				.btn-mine:active{
-					background-color:green;
-				}
-			</style>
-	</head>
-    <body>	      	 
-		<div class="signupdiv">		 		  		
-			<table align="center" >
-				<tr>
-					<td colspan="2" align="center"><span class="err-msg"><?php echo $err_message;?></span>
-					</td>
-				</tr>							   
-			</table>
-			
-			<fieldset>
-			<legend align="center">
-				<tr>				
-   <td><img src="logo2.png"  height="100px"></td>				
-		            <td><h1 align="center" style="font-family:verdana;">Patient Signup</h1></td>					
-				</tr>
-			</legend>
-			  
-			<form action="" method="post" class="form-horizontal form-material" onsubmit="return validate()">
-				<div class="form-group">			
-				 <table align="center" style="border-collapse:collapse;">
-				 <tr>
-					<td><span> ID</span></td>
-					<td>:
-						<input type="text" placeholder="ID" id="id" name="id" value="<?php echo $id?>">
-						<span id="err_id"><?php echo $err_id?></span></td>
-				</tr>
-				<tr>
-					<td><span>Name</span></td>
-					<td>:
-						<input type="text" placeholder="Name" id="name" name="name" value="<?php echo $name?>">
-						<span id="err_name"><?php echo $err_name?></span></td>
-				</tr>
-				<tr>
-					<td><span> Username</span></td>
-					<td>:
-						<input type="text" placeholder="Username" id="uname" name="uname" onfocusout="checkUsername(this)" value="<?php echo $uname?>">
-						<span id="err_uname"><?php echo $err_uname?></span></td>
-				</tr>
-					<tr>
-					<td><span>Password</span></td>
-					<td>:
-						<input type="password" placeholder="Password" id="pass" name="pass" value="<?php echo $pass?>">
-						<span id="err_pass"><?php echo $err_pass?></span></td>
-				</tr>
-					<tr>
-						<td><span>Confirm Password </span></td>
-						<td>:
-				     <input type="password" placeholder="Confirm Password"  id="cpass" name="cpass" value="<?php echo $cpass?>">
-					 <span id="err_cpass"><?php echo $err_cpass?></span></td>
-			</tr>
-				<tr>
-					<td><span>Email</span></td>
-					<td>:
-						<input type="email" placeholder="Email" id="email" name="email" value="<?php echo $email?>">
-						<span id="err_email"><?php echo $err_email?></span></td>
-				</tr>
-				<tr>					   					   
-				<td><span>Phone Number </span></td>
-                <td>:
-				     <input type="num" placeholder="Phone Number" id="num" name="num" value="<?php echo $num?>">
-					 <span id="err_num"><?php echo $err_num?></span></td>
-			</tr> 
+	<head></head>
+	<body>
+	    <div id="error"></div>
+		<center><img src="logo2.png"></center><br/>
+		<fieldset style="width:1000px align: center" >
+	    <legend align="center"><center><h1>Sign Up As Seller</h1></center></legend>
+		<br>
+			 <?php
+			 if(!empty($_SESSION['message'])){
+				 echo $_SESSION['message'];
+					 //$_SESSION['message']=""
+				 }
 				
-			<tr>						
-				<td> <span>Gender</span></td>
-				<td>:<input type="radio" id="male" value="Male" name="gender">Male
-					<input type="radio" id="female" value="Female" name="gender">Female
-					<span id="err_gender"><?php echo $err_gender;?></span></td>
-			</tr>
-						
-				<tr>					   
-				<td><span>Address </span></td>
-                <td>:
-				     <input type="add" placeholder="Address" id="add" name="add" value="<?php echo $add?>">
-					 <span id="err_add"><?php echo $err_add?></span></td>
-			</tr> 
-			
-				<tr>					   
-				<td><span>Date Of Birth </span></td>
-                <td>:
-				     <input type="text" placeholder="dd/mm/yyyy" id="birth" name="birth" value="<?php echo $birth?>">
-					 <span id="err_birth"><?php echo $err_birth?></span></td>
-			</tr> 
-					   <tr>
-					   <td colspan="2" align="center">
-						<p><span><input type="checkbox"></span>I agree to the terms of services</p>
-						</td>
-						</tr>
-					    <tr>		
-
-						   <td colspan="2" align="center"><input class="btn-mine my-font" type="submit"  value="Signup" name="signup">	</td>						   
-					    </tr>
+			 ?>
+		<br>
+		<form action="" method="post">
+			<table align="center">
+			     <tr>
+					<td><span><b>Name</b>:</span></td>
+					<td><input type="text" name="name" id ="name" value = "<?php echo $name;?>"><br>
+					<td><span id="err_name"><font color="red"> <?php echo $err_name;?> </font></span></td>
+				</tr>
+				<tr>
+					<td><span><b>Username</b>:</span></td>
+					<td><input type="text" name="uname" id="uname" value = "<?php echo $uname;?>"><br>
+					<td><span id="err_uname"><?php echo $err_uname;?></span></td>
+				</tr>
+				<tr>
+					<td><span><b>Password</b>:</span></td>
+					<td><input type="password" name="pass" id ="pass" value = "<?php echo $pass;?>"><br>
+					<td><span id="err_pass"><?php echo $err_pass;?></span></td>
+				</tr>
+				<tr>
+					<td><span><b>Confirm Password</b>:</span></td>
+					<td><input type="password" name="conpass" id="conpass" value = "<?php echo $conpass;?>"><br>
+					<td><span id="err_conpass"><?php echo $err_conpass;?></span></td>
+				</tr>
+				<tr>
+					<td><span><b>Email</b>:</span></td>
+					<td><input type="text" name="email" id="email" value = "<?php echo $email;?>"><br>
+					<td><span id="err_email"><?php echo $err_email;?></span></td>
+				</tr>
+				<tr>
+				    <td><span><b>Phone</b>:</span></td>
+					<td><input type="text" name="number" size="9" id="number" value="<?php echo $number;?>"><br>
+					<td><span id="err_number"><?php echo $err_number;?></span></td>
+				</tr>
+				
+				
 					
-				  </table>
-			  
-			             <tr>		
-						   <p class="message">Already Registered? <a href="loginSeller.php">Login</a>
-						<tr>	
+				<tr>
+					<td><span><b>Birth Date</b>:</span></td>
+                    <td>
+                        <select name="day" id="day">
+                            <option disabled selected>Day</option>
+                            <?php 
+                                for($i=1;$i<=31;$i++)
+                                {
+                                    echo "<option>$i<option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="month" id="month">
+                            <option disabled selected>Month</option>
+                            <?php 
+                                $months=array("Jan"=>"1", "Feb"=>"2", "Mar"=>"3", "Apr"=>"4", "May"=>"5", "June"=>"6","Jul"=>"7", "Aug"=>"8", "Sep"=>"9", "Oct"=>"10", "Nov"=>"11", "Dec"=>"12");
+                                foreach($months as $x => $x_value) {
+                                    echo "<option>$x($x_value)<option>";
+                                    
+                                  }
+                            ?>
+                        </select>
+                        <select name="year" id="year">
+                        <option disabled selected>Year</option>
+                        <?php 
+                                for($i=1985;$i<=2021;$i++)
+                                {
+                                    echo "<option>$i<option>";
+                                }
+                            ?>
+                        </select>
+					</td>
+					   <td><span id="err_birthday"><?php echo $err_birthday; ?></span></td>					
 
-			  
-			  
-			  <a href="signup.php">Back</a>
-			  
-			  </form>
-			  </fieldset>
-		  </div>
-		  </div>
-	 </body>
-	 <script>
+				</tr>
+				<tr>
+					<td><span><b>Gender</b>:</span></td>
+					<td><input type="radio" name="gender" id="gender1" value="Male"><span>Male</span>
+					    <input type="radio" name="gender" id="gender2" value="Female"><span>Female</span></td>
+					<td><span id="err_gender" ><?php echo $err_gender;?></span></td>
+				</tr>
+				
+				<tr>
+					<td><span><b>Address</b>:</span></td>
+					<td><input type="text" name="address" id="address" value = "<?php echo $address;?>"><br>
+					<td><span id="err_address"><?php echo $err_address;?></span></td>
+				</tr>
+				
+			</table>
+			<br>
+			<center><input type="submit" name="Register"></center>
+			<br>
+			<h5 style="text-align:center;">Already have an account? <a href="Login.php">Log-In</a></h5><br>
+			<h5 style="text-align:center;"><a href="signup.php">Back</a></h5><br>
+
+			<center><a href="Home_From.php">Go To HOME</a></center>
+			
+		</form>
+		</fieldset>
+	</body>
+		
+
+<script>
 		function get (id){
 			return document.getElementById(id);
 		}
@@ -137,11 +125,7 @@
 		   
 		   //cleanUp();
 		   var hasError=false;
-		   if(get("id").value == ""){
-			   get ("err_id").innerHTML="*ID Required<br>";
-			   get ("err_id").style.color="red";
-			   hasError=true;			  
-		   }
+		   
 		   if(get("name").value == ""){
 			   get ("err_name").innerHTML="*Name Required<br>";
 			   get ("err_name").style.color="red";
@@ -157,9 +141,9 @@
 			   get ("err_pass").style.color="red";
 			   hasError=true;			   
 		   }
-		   if(get("cpass").value == ""){
-			   get ("err_cpass").innerHTML="*Confirm Password Required<br>";
-			   get ("err_cpass").style.color="red";
+		   if(get("conpass").value == ""){
+			   get ("err_conpass").innerHTML="*Confirm Password Required<br>";
+			   get ("err_conpass").style.color="red";
 			   hasError=true;			   
 		   }
 		   if(get("email").value == ""){
@@ -168,26 +152,26 @@
 			   hasError=true;
 			  
 		   }
-		   if(get("num").value == ""){
-			   get ("err_num").innerHTML="*Phone Number Required<br>";
-			   get ("err_num").style.color="red";
+		   if(get("number").value == ""){
+			   get ("err_number").innerHTML="*Phone Number Required<br>";
+			   get ("err_number").style.color="red";
 			   hasError=true;
 			   
 		   }
-		   if(get("add").value == ""){
-			   get ("err_add").innerHTML="*Address Required<br>";
-			   get ("err_add").style.color="red";
+		   if(get("address").value == ""){
+			   get ("err_address").innerHTML="*Address Required<br>";
+			   get ("err_address").style.color="red";
 			   hasError=true;
 		   }
-		   if(!get("male").checked && !get("female").checked ){
+		   if(!get("gender1").checked && !get("gender2").checked ){
 				get("err_gender").innerHTML="* Select gender";
 				get("err_gender").style.color="red";
 				has_error=true;
 			}
 		   
-		   if(get("birth").value == ""){
-			   get ("err_birth").innerHTML="*Date Of Birth Required<br>";
-			   get ("err_birth").style.color="red";
+		   if(get("birthday").value == ""){
+			   get ("err_birthday").innerHTML="*Date Of Birth Required<br>";
+			   get ("err_birthday").style.color="red";
 			   hasError=true;
 			   
 		   }
@@ -199,16 +183,16 @@
 		   
 	   }
 		function cleanUp(){
-			get ("err_id").innerHTML="";
+			
 			get ("err_name").innerHTML="";
 			get ("err_uname").innerHTML="";
 			get ("err_pass").innerHTML="";
-			get ("err_cpass").innerHTML="";
+			get ("err_conpass").innerHTML="";
 			get ("err_email").innerHTML="";
-			get ("err_num").innerHTML="";
-			get ("err_add").innerHTML="";
+			get ("err_number").innerHTML="";
+			get ("err_address").innerHTML="";
 			get ("err_gender").innerHTML="";
-			get ("err_birth").innerHTML="";
+			get ("err_birthday").innerHTML="";
 		}
 			
 		function checkUsername(control){
@@ -230,7 +214,10 @@
 		xhttp.send();
 	}
 			
-	//alert("This is Add Employee");
+	
 	 
 	 </script>
+
+
 </html>
+

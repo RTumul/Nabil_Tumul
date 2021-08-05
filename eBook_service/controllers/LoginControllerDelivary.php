@@ -30,18 +30,15 @@
 	   if(!$hasError){
 			//$_SESSION["user"]=authenticateManager($uname,$pass);
 			if($user = authenticateManager($uname,$pass)){
-				$_SESSION["deliveryman_info"]=$user["uname"];
+				$_SESSION["id"]=$user["id"];
+				$_SESSION["uname"]=$user["uname"];
 				header("Location:Home_Delivery.php");
 			}
 			echo "Invalid username or password";
 		}
 	}
 	
-	function addsignup($id,$username,$password,$email,$num,$add,$gender,$birth){
-		$query = "insert into deliveryman_info values('$id','$uname','$pass','$email','$num','$add','$gender','$birth')";		
-		execute($query);
-		header("Location:2medical.php");
-	}
+	
 	
 	function authenticateManager($uname,$pass){
 		$query = "select * from deliveryman_info where uname='$uname' and pass='$pass'";

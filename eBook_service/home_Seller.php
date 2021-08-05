@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(!isset($_SESSION["seller_info"])){
+	if(!isset($_SESSION["id"])){
 	header("Location: loginSeller.php");
 }
 ?>
@@ -16,13 +16,14 @@
 	<form action="" method="post">
 		<div class="text-center">
 			<a href="book_upload.php" class="btn btn-danger">Upload A Book</a>
+			<a href="seller_profile_info.php" class="btn btn-warning">Edit Information</a>
 			
 			<a href="loginSeller.php" class="btn btn-primary">Logout</a>		
 		</div>
 		</fieldset>
 	
 	
-	<br/><br/><br/><br/><hr/><h4 style="text-align:left;">User Name: <?php echo $_SESSION["seller_info"];?></h4>
+	<br/><br/><br/><br/><hr/><h4 style="text-align:left;">User Name: <?php echo $_SESSION["uname"];?></h4>
 	<h5 style="text-align:left;">User Type: Seller</h5>
 	
 	

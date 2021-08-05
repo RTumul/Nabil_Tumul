@@ -110,4 +110,29 @@ require_once "controllers\RegistrationControllerDelivary.php";
 	</body>
 		<script src="JS/Reg.js"></script>
 
+<script>
+      //ajax
+
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange=function(){
+			if(this.readyState == 4 && this.status == 200){
+				//when server respond
+				var rsp = this.responseText;
+				if(rsp == "true"){
+					document.getElementById("err_uname").innerHTML = "<br>Valid";
+				}else{
+					document.getElementById("err_uname").innerHTML = "<br>Not Valid";
+				}
+			}
+		};
+		xhttp.open("GET","checkusernamedelivery.php?uname="+username,true);
+		xhttp.send();
+	}
+			
+	
+	 
+	 </script>
+
+
 </html>
+
