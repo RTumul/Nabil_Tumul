@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2021 at 02:14 PM
+-- Generation Time: Aug 05, 2021 at 03:59 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -51,10 +51,10 @@ INSERT INTO `books_info` (`id`, `name`, `wname`, `pri`, `email`, `phone`) VALUES
 
 CREATE TABLE `deliveryman_info` (
   `id` int(11) NOT NULL,
-  `uname` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `uname` varchar(50) NOT NULL,
   `pass` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `phone` int(11) NOT NULL,
   `birthdate` varchar(10) NOT NULL,
   `gender` varchar(50) NOT NULL
@@ -64,9 +64,9 @@ CREATE TABLE `deliveryman_info` (
 -- Dumping data for table `deliveryman_info`
 --
 
-INSERT INTO `deliveryman_info` (`id`, `uname`, `name`, `email`, `pass`, `phone`, `birthdate`, `gender`) VALUES
-(5, 'Turno123', 'Turno', '', 'Turno#123', 1725103018, '3/Mar(3)/1', 'Female'),
-(8, 'Md Ridwanuzzaman', 'Demo_User', 'Tumul#123', 'meh.rubu@yahoo.com', 1725103018, '1/Jan(1)/1', 'Male');
+INSERT INTO `deliveryman_info` (`id`, `name`, `uname`, `pass`, `email`, `phone`, `birthdate`, `gender`) VALUES
+(5, 'Turno', 'Turno123', 'Turno#123', 'turno@gmail.com', 1725103018, '3/Mar(3)/1', 'Female'),
+(8, 'Demo', 'Demo_User', 'Demo#123', 'meh.rubu@yahoo.com', 1725103018, '1/Jan(1)/1', 'Male');
 
 -- --------------------------------------------------------
 
@@ -91,8 +91,8 @@ CREATE TABLE `seller_info` (
 --
 
 INSERT INTO `seller_info` (`id`, `name`, `uname`, `pass`, `email`, `phone`, `birthdate`, `gender`, `address`) VALUES
-(1, 'Md Ridwanuzzaman', 'Tumul156', 'Tumul..0402', 'meh.rubu@yahoo.com', 1725103018, '1/Jan(1)/1', 'Male', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12'),
-(2, 'Turno', 'Turno123', 'Turno123?', 'meh.rubu@yahoo.com', 1725103018, '1/Jan(1)/1', 'Female', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12');
+(1, 'Tumul', 'Tumul156', '', 'meh.rubu@yahoo.com', 1725103018, '1/Jan(1)/1', 'Male', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12'),
+(2, 'Turno', 'Turno123', '', 'meh@yahoo.com', 1725103018, '1/Jan(1)/1', 'Female', 'House-17, Road- 5, Block- C, Pallabi,  Mirpur 12');
 
 --
 -- Indexes for dumped tables
@@ -116,7 +116,7 @@ ALTER TABLE `deliveryman_info`
 --
 ALTER TABLE `seller_info`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `uname` (`name`,`pass`);
+  ADD UNIQUE KEY `uname` (`uname`,`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
